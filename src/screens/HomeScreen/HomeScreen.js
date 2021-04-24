@@ -42,6 +42,8 @@ function HomeScreen2({ navigation }) {
           <Card.Content>
             <Title>{item.title}</Title>
             <Paragraph>{item.full_description}</Paragraph>
+            <Paragraph>Components: {item.components}</Paragraph>
+            <Paragraph>{item.price}</Paragraph>
           </Card.Content>
           <Card.Cover source={{ uri: item.featured_image }} />
           <Card.Actions>
@@ -160,6 +162,44 @@ function DetailsScreen({ navigation }) {
               name: 'featured_image',
 
               label: 'Featured Image',
+
+              rules: {
+                required: {
+                  value: false,
+                },
+              },
+
+              textInputProps: {
+                keyboardType: 'default',
+
+                autoCapitalize: 'none',
+              },
+            },
+            {
+              type: 'input',
+
+              name: 'components',
+
+              label: 'Components',
+
+              rules: {
+                required: {
+                  value: false,
+                },
+              },
+
+              textInputProps: {
+                keyboardType: 'default',
+
+                autoCapitalize: 'none',
+              },
+            },
+            {
+              type: 'input',
+
+              name: 'price',
+
+              label: 'Price',
 
               rules: {
                 required: {
